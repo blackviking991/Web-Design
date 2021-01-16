@@ -1,0 +1,276 @@
+@import url("https://fonts.googleapis.com/css2?family=Ranchers&display=swap");
+@import url(https://fonts.googleapis.com/css?family=Lato);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css);
+@import url("https://fonts.googleapis.com/css2?family=Secular+One&display=swap");
+/* Main content */
+body {
+  font-family: "Secular One", sans-serif;
+  background: linear-gradient(#333, #111 70%);
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+}
+#container {
+  visibility: visible;
+  width: 70px;
+  height: 35px;
+  position: absolute;
+  top: calc(50% - 17px);
+  left: calc(50% - 35px);
+}
+#loader {
+  width: 70px;
+  height: 70px;
+  border-style: solid;
+  border-top-color: #fff;
+  border-right-color: #fff;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  box-sizing: border-box;
+  animation: loader-rotate 3s ease-in-out infinite;
+  transform: rotate(-200deg);
+}
+@keyframes loader-rotate {
+  0% {
+    border-width: 10px;
+  }
+  25% {
+    border-width: 3px;
+  }
+  50% {
+    transform: rotate(115deg);
+    border-width: 10px;
+  }
+  75% {
+    border-width: 3px;
+  }
+  100% {
+    border-width: 10px;
+  }
+}
+.main {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  height: 80vh;
+  width: 100%;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+.text-area p {
+  position: relative;
+  top: -20%;
+  color: white;
+  font-size: 2.7rem;
+  text-align: justify;
+}
+.main .main-header {
+  color: black;
+  position: absolute;
+  font: 100 5rem "Ranchers", cursive;
+  text-transform: uppercase;
+  max-width: 350px;
+  top: 10%;
+  left: 5%;
+  z-index: 2;
+}
+
+/* Background circles */
+.circle-bkg {
+  top: 30%;
+  left: 10%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.circle {
+  opacity: 1;
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  transform-origin: 50% 48%;
+  border-radius: 43%;
+  animation: rotate 11s infinite linear;
+  background: #ffa500;
+}
+.circle.two {
+  animation-duration: 5s;
+}
+.circle.three {
+  animation-duration: 9s;
+}
+.circle.four {
+  animation-duration: 3s;
+}
+.Foot {
+  height: 10vh;
+  width: 100%;
+}
+/* About ME  */
+.about-me {
+  background: black;
+  height: 70vh;
+  margin: 0 70px 0 70px;
+  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.about-me-text {
+  font-family: "Secular One", sans-serif;
+  background-color: #ffa500;
+}
+.about-me-text p {
+  position: relative;
+  top: 40%;
+  margin: 0 30px 0 30px;
+}
+.about-btn {
+  font-family: "Secular One", sans-serif;
+  display: inline-block;
+  position: absolute;
+  margin-top: 50px;
+  right: 20px;
+  height: 50px;
+  width: 250px;
+  box-shadow: 4px 4px 8px #000;
+  text-align: center;
+  letter-spacing: 1px;
+  font: 2rem sans-serif;
+  color: #ffa500;
+  padding-top: 10px;
+  background-color: black;
+}
+/* Parallax */
+.container-parallax {
+  margin-top: 100px;
+  overflow: hidden;
+  width: 100%;
+}
+.parallax-window {
+  min-height: 800px;
+  background: transparent;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+}
+p > a:hover {
+  color: #d9d9d9;
+  text-decoration: underline;
+}
+
+/* Footer */
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* Media queries */
+@media screen and (max-width: 768px) {
+  body {
+    overflow: hidden !important;
+  }
+}
+@media screen and (max-width: 600px) {
+  .main {
+    height: 50vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+  }
+  .text-area p {
+    margin-right: 30px;
+    left: 1%;
+    color: white;
+    font-size: 0.8rem;
+    text-align: justify;
+    position: relative;
+  }
+  .main .main-header {
+    position: absolute;
+    font: 100 1.5rem "Ranchers", cursive;
+    text-transform: uppercase;
+    color: #ffa500;
+    max-width: 350px;
+    top: 10%;
+    left: 5%;
+    z-index: 2;
+    color: black;
+  }
+  /* About Me */
+  .about-me {
+    height: auto;
+    background: black;
+    margin: 0 40px 0 40px;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .about-me-text {
+    font-family: "Secular One", sans-serif;
+    background-color: #ffa500;
+  }
+  .about-me-text p {
+    font-size: 5px;
+    position: relative;
+    top: 10%;
+    margin: 0 30px 0 30px;
+  }
+  .about-btn {
+    font-family: "Secular One", sans-serif;
+    display: inline-block;
+    position: absolute;
+    margin-top: 5px;
+    right: 2px;
+    height: 10px;
+    width: 50px;
+    box-shadow: 4px 4px 8px #000;
+    text-align: center;
+    letter-spacing: 1px;
+    font: 1rem sans-serif;
+    color: #ffa500;
+    padding-top: 10px;
+    background-color: black;
+  }
+  .container-parallax {
+    margin-top: 100px;
+    width: 100%;
+  }
+  .parallax-window {
+    min-height: 800px;
+    background: transparent;
+  }
+  /* Background circles */
+  .circle-bkg {
+    top: 20%;
+    left: 10%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .circle {
+    opacity: 1;
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    transform-origin: 50% 48%;
+    border-radius: 43%;
+    animation: rotate 11s infinite linear;
+    background: #ffa500;
+  }
+  ul {
+    position: absolute;
+    left: 33%;
+    bottom: 0%;
+    padding: 0;
+    list-style: none;
+  }
+}

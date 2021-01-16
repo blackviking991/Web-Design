@@ -1,0 +1,410 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:500);
+html {
+  overflow-x: hidden;
+}
+
+body {
+  overflow-y: hidden;
+  background-color: black;
+}
+
+.menu-wrapper {
+  border-radius: 10%;
+  height: 60px;
+  background-color: black;
+  position: fixed;
+  z-index: 5;
+}
+
+.menu {
+  z-index: 5;
+  position: absolute;
+  top: 15px;
+  left: 5px;
+  width: 36px;
+  height: 6px;
+  background-color: #7482A5;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  cursor: pointer;
+  margin: 5px;
+  color: #ffa500;
+  -webkit-perspective: 1000;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.menu:hover > ul.nav-links, .menu.open > ul.nav-links {
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  opacity: 1;
+  width: 180px;
+  -webkit-transform: translateX(15px);
+          transform: translateX(15px);
+  pointer-events: auto;
+}
+
+.menu:after, .menu:before {
+  content: "";
+  position: absolute;
+  width: 36px;
+  height: 6px;
+  background-color: #7482A5;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+
+.menu:after {
+  top: 12px;
+}
+
+.menu:before {
+  top: -12px;
+}
+
+.menu:hover, .menu.open {
+  background-color: transparent;
+}
+
+.menu:hover::after, .menu:hover::before, .menu.open::after, .menu.open::before {
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  width: 18px;
+}
+
+.menu:hover::after, .menu.open::after {
+  -webkit-transform: translate(3px, -7px) rotate(405deg);
+          transform: translate(3px, -7px) rotate(405deg);
+}
+
+.menu:hover::before, .menu.open::before {
+  -webkit-transform: translate(12px, 17px) rotate(-405deg);
+          transform: translate(12px, 17px) rotate(-405deg);
+}
+
+.menu ul.nav-links {
+  margin: 0;
+  padding: 36px 0 0 0;
+  opacity: 0;
+  -webkit-transform: translateX(-15px);
+          transform: translateX(-15px);
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  position: absolute;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.menu ul.nav-links li {
+  width: 100%;
+  padding: 4px 8px;
+  list-style-type: none;
+  font-family: 'Raleway', sans-serif;
+  font-size: 25px;
+  text-transform: uppercase;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  border-left: 2px solid #7482A5;
+}
+
+.menu ul.nav-links li:hover, .menu ul.nav-links li.active {
+  color: white;
+  border-left: 2px solid white;
+}
+
+#Header {
+  position: relative;
+  height: 80vh;
+  background-color: black;
+}
+
+#Header .image {
+  padding-top: 100px;
+}
+
+#Header .text {
+  padding-top: 100px;
+}
+
+#Header .text p {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: white;
+}
+
+/* Background circles */
+.circle-bkg {
+  position: relative;
+  width: 360px;
+  height: 340px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.circle-bkg img {
+  z-index: 1;
+  position: relative;
+  width: 360px;
+  height: 340px;
+}
+
+.circle {
+  opacity: 1;
+  position: absolute;
+  width: 360px;
+  height: 340px;
+  -webkit-transform-origin: 50% 48%;
+          transform-origin: 50% 48%;
+  border-radius: 43%;
+  -webkit-animation: rotate 11s infinite linear;
+          animation: rotate 11s infinite linear;
+  background: #1e143c;
+}
+
+.circle.two {
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+}
+
+.circle.three {
+  -webkit-animation-duration: 9s;
+          animation-duration: 9s;
+}
+
+.circle.four {
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+}
+
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+/* Parallax */
+.container-parallax {
+  overflow: hidden;
+  width: 100%;
+}
+
+.parallax-window {
+  min-height: 70vh;
+  background: transparent;
+}
+
+#About {
+  background-color: black;
+  height: 65vh;
+  position: relative;
+}
+
+#About .row {
+  padding: 30px 0 0 0;
+}
+
+#About h1 {
+  color: white;
+  padding: 10px 0 50px 0;
+  text-align: center;
+}
+
+#About .skills {
+  height: 50vh;
+  position: relative;
+}
+
+#About .skills .skills-bar-container {
+  position: absolute;
+  width: 70%;
+  left: 15%;
+  list-style-type: none;
+}
+
+#About .text p {
+  font-size: 1.5rem;
+  padding: 30px 0 0 0;
+  color: white;
+}
+
+#Skills {
+  background-color: black;
+  height: 50vh;
+  position: relative;
+}
+
+#Skills .row {
+  height: 50vh;
+}
+
+#Skills .row p {
+  font-size: 1.3rem;
+  padding: 60px 10px 0 10px;
+  color: white;
+}
+
+#Skills .row h1 {
+  font-size: 5rem;
+  color: white;
+  padding: 20px 0 0 0;
+  text-align: center;
+}
+
+footer {
+  background-color: #ffa500;
+  height: auto;
+  overflow: hidden;
+}
+
+footer p {
+  color: white;
+  text-align: center;
+}
+
+footer .icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+footer ul {
+  list-style-type: none;
+  overflow: hidden;
+}
+
+footer li {
+  float: left;
+}
+
+footer li a {
+  font-size: 2rem;
+  display: block;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  padding: 16px;
+}
+
+footer li a:hover {
+  color: blueviolet;
+}
+
+@media (max-width: 575.98px) {
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  #Header {
+    position: relative;
+    height: auto;
+    background-color: black;
+  }
+  #Header .image {
+    padding-top: 100px;
+  }
+  #Header .text {
+    padding-top: 50px;
+  }
+  #Header .text p {
+    text-align: justify;
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: white;
+  }
+  #About {
+    position: relative;
+    height: auto;
+    background-color: #ffa500;
+  }
+  #About .row {
+    padding: 10px 0 0 0;
+  }
+  #About h1 {
+    padding: 10px 0 0 0;
+    text-align: center;
+  }
+  #About .skills {
+    position: relative;
+    padding: 0 0 400px 0;
+  }
+  #About .skills .skills-bar-container {
+    position: absolute;
+    width: 90%;
+    left: 4%;
+    list-style-type: none;
+  }
+  #About .text p {
+    color: white;
+    padding: 0 20px 0 20px;
+  }
+  #Skills {
+    height: auto !important;
+    position: relative;
+  }
+  #Skills .row {
+    height: auto;
+  }
+  #Skills .row p {
+    padding: 60px 10px 0 10px;
+    color: white;
+  }
+  #Skills .row h1 {
+    font-size: 5rem;
+    color: white;
+    padding: 20px 0 0 0;
+    text-align: center;
+  }
+}
+
+@media (max-width: 767.98px) {
+  #Skills {
+    height: 850px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  #About {
+    position: relative;
+    height: auto;
+    background-color: #ffa500;
+  }
+  #About .row {
+    padding: 10px 0 50px 0;
+  }
+  #Skills {
+    height: 850px;
+  }
+}
